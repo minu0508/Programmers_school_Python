@@ -1,0 +1,154 @@
+# 01
+def solution(num):
+    if (num % 2 == 1):
+        answer = 'Odd'
+    elif (num % 2 == 0):
+        answer = 'Even'
+    return answer
+
+# 02
+def solution(arr):
+    answer = sum(arr) / len(arr)
+    return answer
+
+# 03
+def solution(n):
+    A = []
+    for i in range(1, (n+1), 1):
+        if (n % i == 0):
+            A.append(i)
+    answer = sum(A)
+    return answer
+
+# 04
+def solution(n):
+    answer = sum(list(map(int, list(str(n)))))
+    return answer
+
+# 05
+def solution(n):
+    step = 1
+    answer = 0
+    while(True):
+        num = step*step
+        if step*step == n:
+            answer = (step+1) * (step+1)
+            break
+        elif (num >= n):
+            answer = -1
+            break
+        step += 1
+    return answer
+
+# 06
+def solution(n):
+    answer = list(map(int, str(n)))
+    answer.reverse()
+    return answer
+
+# 07
+def solution(s):
+    s = list(map(str, s))
+    
+    Y = 0
+    P = 0
+    
+    for i in s:
+        if (i == 'p' or i == 'P'):
+            Y += 1
+        elif (i == 'y' or i == 'Y'):
+            P += 1
+    if (Y == P):
+        return True
+    else:
+        return False
+
+# 08
+def solution(x):
+    X = list(str(x))
+    Total = 0
+    
+    for i in range(0, len(X), 1):
+        Total += int(X[i])
+        
+    if (x % Total == 0):
+        return True
+    else:
+        return False
+
+# 09
+def solution(n):
+    n = sorted(list(str(n)))
+    n.reverse()
+    answer = ''
+    
+    for i in n:
+        answer += i
+        
+    return int(answer)
+
+# 10
+def solution(s):
+    answer = int(s)
+    return answer
+
+# 11
+def solution(x, n):
+    answer = []
+    num = x
+    for i in range(0, n, 1):
+        answer.append(num)
+        num += x
+    return answer
+
+# 12
+def solution(n):
+    answer = 0
+    for i in range(1, n, 1):
+        if (n % i == 1):
+            answer = i
+            break
+    return answer
+
+# 13
+def solution(num):
+    if (num == 1):
+        answer = 0
+    else:
+        answer = 0
+        while (True):
+            if (num != 1):
+                if (num % 2 == 0):
+                    num = num // 2
+                    answer += 1
+                elif (num % 2 == 1):
+                    num = num * 3 + 1
+                    answer += 1
+            elif (num == 1):
+                break        
+            
+            if (answer >= 500):
+                answer = -1
+                break
+                
+    return answer
+
+# 14
+def solution(a, b):
+    answer = 0
+    if (a <= b):
+        for i in range(a, (b+1), 1):
+            answer += i
+            
+    if (a > b): 
+        for i in range(b, (a+1), 1):
+            answer += i
+    return answer
+
+# 15
+def solution(seoul):
+    Number = str(seoul.index("Kim"))
+    Front = "김서방은 "
+    Back = "에 있다"
+    answer = Front + Number + Back
+    return answer
