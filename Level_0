@@ -1,0 +1,291 @@
+# 01
+def solution(num1, num2):
+    if num1 == num2:
+        answer = 1
+    else:
+        answer = -1
+    return answer
+    
+# 02
+def solution(num1, num2):
+    answer = num1 + num2
+    return answer
+
+# 03
+def solution(num1, num2):
+    answer = num1 % num2
+    return answer
+
+# 04
+def solution(num1, num2):
+    answer = num1 // num2
+    return answer
+
+# 05
+def solution(age):
+    answer = 2022 - (age-1)
+    return answer
+
+# 06
+def solution(numbers):
+    answer = (sum(numbers) / len(numbers))
+    return answer
+
+# 07
+def solution(num1, num2):
+    answer = num1 - num2
+    return answer
+
+# 08
+def solution(str1, str2):
+    answer = 0
+    Count = 0
+    Count = str1.count(str2)
+    if (Count >= 1):
+        answer = 1
+    else:
+        answer = 2
+    return answer
+
+# 09
+def solution(num1, num2):
+    answer = int((num1 / num2) * 1000)
+    return answer
+
+# 10
+def solution(n):
+    answer = 0
+    for i in range(0, (n+1), 2):
+        answer += i
+    return answer
+
+# 11
+def solution(array, height):
+    answer = 0
+    for i in range(0, len(array), 1):
+        if (height < array[i]):
+            answer += 1
+    return answer
+
+# 12
+def solution(numbers):
+    answer = 0
+    
+    numbers = sorted(numbers)
+    answer = numbers[len(numbers)-1] * numbers[len(numbers)-2]
+    return answer
+
+# 13
+def solution(angle):
+    if (angle < 90):
+        answer = 1
+    elif (angle == 90):
+        answer = 2
+    elif (90 < angle < 180):
+        answer = 3
+    elif (angle == 180):
+        answer = 4
+        
+    return answer
+    
+# 14
+def solution(n, k):
+    answer = 0
+    answer += 12000 * n
+    if (n >= 10):
+        Juice = n // 10
+        answer = (12000 * n) + ((k - Juice) * 2000)
+    else:
+        answer = (12000 * n) + (k * 2000)
+    return answer
+
+# 15
+def solution(n, t):
+    answer = n
+    for i in range(0, t, 1):
+        answer += answer
+    return answer
+
+# 16
+def solution(array, n):
+    answer = 0
+    for i in array:
+        if (i == n):
+            answer += 1
+    return answer
+
+# 17
+def solution(numbers, num1, num2):
+    answer = []
+    for i in range(num1, (num2+1), 1):
+        answer.append(numbers[i])
+    
+    return answer
+
+# 18
+def solution(n):
+    answer = 0
+    while(n > 0):
+        n -= 7
+        answer += 1
+    return answer
+
+# 19
+def solution(array):
+    answer = 0
+    for i in range(0, len(array), 1):
+        array[i] = array[i] * 2
+    answer = array
+    return answer
+
+# 20
+def solution(message):
+    message = list(str(message))
+    answer = len(message) * 2
+    return answer
+    
+# 21
+def solution(array):
+    array = sorted(array)
+    answer = array[int(len(array)/2)]
+    return answer
+
+# 22
+def solution(strlist):
+    answer = []
+    for i in range(0, len(strlist), 1):
+        answer.append(len(list(map(str, strlist[i]))))
+    return answer
+
+# 23
+def solution(n):
+    answer = sum(list(map(int, list(str(n)))))
+    return answer
+
+# 24
+def solution(my_string):
+    Str = list(map(str, my_string))
+    Str.reverse()
+    answer = ''
+    
+    for i in Str:
+        answer += i
+    return answer
+
+# 25
+def solution(n):
+    answer = []
+    for i in range(1, (n+1), 2):
+        answer.append(i)
+    return answer
+
+# 26
+def solution(n):
+    answer = 0
+    number = 1
+    while(True):
+        if (number*number == n):
+            answer = 1
+            break
+        elif (number == n):
+            answer = 2
+            break
+        number += 1
+    return answer
+
+# 27
+def solution(dot):
+    if (dot[0] > 0 and dot[1] > 0):
+        answer = 1
+    elif (dot[0] < 0 and dot[1] > 0):
+        answer = 2
+    elif (dot[0] < 0 and dot[1] < 0):
+        answer = 3
+    elif (dot[0] > 0 and dot[1] < 0):
+        answer = 4        
+        
+    return answer
+
+# 28
+def solution(n):
+    answer = []
+    for i in range(1, (n+1), 1):
+        if (n % i == 0):
+            answer.append(i)
+    return answer
+
+# 29
+def solution(my_string, n):
+    answer = ''
+    my_string = list(str(my_string))
+    for i in range(0, len(my_string), 1):
+        answer += my_string[i]*n
+    return answer
+
+# 30
+def solution(money):
+    answer = [(money)//5500, money%5500]
+    return answer
+    
+# 31
+def solution(my_string):
+    answer = ''
+    my_string = list(my_string)
+    my_string = list(dict.fromkeys(my_string))
+    
+    for i in range(0, len(my_string), 1):
+        answer += my_string[i]
+        
+    return answer
+
+# 32
+def solution(my_string, letter):
+    my_string = list(str(my_string))
+    Count = my_string.count(letter)
+    answer = ''
+    
+    for i in range(0, Count, 1):
+        my_string.remove(letter)
+    
+    for j in range(0, len(my_string), 1):
+        answer += my_string[j]    
+    return answer
+
+# 33
+def solution(n, numlist):
+    answer = []
+    for i in range(0, len(numlist), 1):
+        if (numlist[i] % n == 0):
+            answer.append(numlist[i])
+    return answer
+
+# 34
+def solution(rsp):
+    answer = ''
+    rsp = list(rsp)
+    
+    for i in range(0, len(rsp), 1):
+        if (rsp[i] == '2'):
+            answer += '0'
+        elif (rsp[i] == '0'):
+            answer += '5'
+        else:
+            answer += '2'
+    
+    return answer
+
+# 35
+def solution(sides):
+    answer = 0
+    Total = 0
+    sides = sorted(sides)
+    
+    for i in range(0, len(sides)-1, 1):
+        Total += sides[i]
+    
+    if (sides[len(sides) - 1] >= Total):
+        answer = 2
+    else:
+        answer = 1
+        
+    return answer
