@@ -289,3 +289,149 @@ def solution(sides):
         answer = 1
         
     return answer
+
+# 36
+def solution(my_string):
+    answer = []
+    Num_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    for i in my_string:
+        for j in Num_list:
+            if (i == j):
+                answer.append(int(i))
+    answer.sort()
+    return answer
+    
+# 37
+def solution(my_string):
+    A = []
+    answer = ''
+    Alpha = ['a', 'e', 'i', 'o', 'u']
+    my_string = list(str(my_string))
+    
+    for j in Alpha:
+        for i in my_string:
+            if (j == i):
+                A.append(j)
+                
+    for k in range(0, len(A), 1):
+        my_string.remove(A[k])
+
+    for _ in range(0, len(my_string), 1):
+        answer += my_string[_]
+
+    return answer
+    
+# 38
+def solution(price):
+    answer = 0
+    
+    if (1000000 > price >= 500000):
+        answer += int(price * 0.8)
+        
+    elif (500000 > price >= 300000):
+        answer += int(price * 0.9)
+        
+    elif (300000 > price >= 100000):
+        answer += int(price * 0.95)
+        
+    else:
+        answer += price
+        
+    return answer
+
+# 39
+def solution(s1, s2):
+    answer = 0
+    for i in range(0, len(s1), 1):
+        answer += s2.count(s1[i])
+    return answer
+
+# 40
+def solution(num_list):
+    answer = []
+    A = 0
+    B = 0
+    for i in range(0, len(num_list), 1):
+        if (num_list[i] % 2 == 0):
+            A += 1
+        else:
+            B += 1
+            
+    answer.append(A)
+    answer.append(B)
+    return answer
+    
+# 41
+def solution(my_string, num1, num2):
+    answer = ''
+    my_string = list(str(my_string))
+    
+    A = my_string[num1]
+    my_string[num1] = my_string[num2]
+    my_string[num2] = A
+    
+    for i in range(0, len(my_string), 1):
+        answer += my_string[i]
+    return answer
+   
+# 42
+def solution(num, k):
+    answer = 0
+    num = list(str(num))
+    k = str(k)
+    try:
+        answer = num.index(k)+1
+    except:
+        answer = -1
+    return answer
+    
+ # 43
+ def solution(my_string):
+    answer = ''
+    my_string = list(str(my_string))
+    
+    for i in my_string:
+        A = i.isupper()
+        Save = i
+        if (A == False):
+            i = i.upper()
+            answer += i
+        else:
+            i = i.lower()
+            answer += i
+    return answer
+ 
+ # 44
+ def solution(my_string):
+    answer = ''
+    Collect = []
+    my_string = list(str(my_string))
+    
+    for i in my_string:
+        A = i.isupper()
+        Save = i
+        if (A == False):
+            Collect.append(i)
+        else:
+            i = i.lower()
+            Collect.append(i)
+
+    Collect = sorted(Collect)
+    for j in range(0, len(Collect), 1):
+        answer += Collect[j]
+        
+    return answer
+ 
+ # 45
+ def solution(order):
+    answer = 0
+    order = list(str(order))
+    
+    for i in order:
+        if (i == '3'):
+            answer += 1
+        elif (i == '6'):
+            answer += 1
+        elif (i == '9'):
+            answer += 1
+    return answer
