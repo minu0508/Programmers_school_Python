@@ -435,3 +435,19 @@ def solution(num, k):
         elif (i == '9'):
             answer += 1
     return answer
+
+# 46
+def solution(slice, n):
+    answer = 0
+    while(n > 0):
+        n -= slice
+        answer += 1
+    return answer
+        
+# 47
+def solution(num_list):
+    answer = []
+    num_list.reverse()
+    for i in num_list:
+        answer.append(i)
+    return answer
