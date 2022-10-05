@@ -451,3 +451,22 @@ def solution(num_list):
     for i in num_list:
         answer.append(i)
     return answer
+
+# 48
+def solution(array):
+    answer = []
+    answer.append(max(array))
+    answer.append(array.index(max(array)))
+    return answer
+    
+# 49
+def solution(arr, divisor):
+    answer = []
+    for i in range(0, len(arr), 1):
+        if (arr[i] % divisor == 0):
+            answer.append(arr[i])
+    if (len(answer) == 0):
+        answer.append(-1)
+    
+    answer = sorted(answer)
+    return answer
