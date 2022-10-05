@@ -163,3 +163,14 @@ def solution(phone_number):
     for j in phone_number:
         answer += j
     return answer
+    
+# 17
+def solution(arr):
+    answer = []
+    if (len(arr) == 1):
+        answer.append(-1)
+    else:
+        arr.remove(min(arr))
+        for i in arr:
+            answer.append(i)
+    return answer
