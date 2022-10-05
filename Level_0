@@ -470,3 +470,22 @@ def solution(arr, divisor):
     
     answer = sorted(answer)
     return answer
+
+# 50
+def solution(array):
+    answer = 0
+    array = list(str(array))
+    for i in array:
+        if i == '7':
+            answer += 1
+    return answer
+    
+# 51
+def solution(age):
+    answer = ''
+    Alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    age = list(str(age))
+    for i in range(len(age)):
+        answer += Alpha[int(age[i])]
+    
+    return answer
