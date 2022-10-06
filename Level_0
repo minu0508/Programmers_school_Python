@@ -501,3 +501,31 @@ def solution(box, n):
     answer = (box[0]*box[1]*box[2]) // n 
     return answer
     
+# 53
+def solution(hp):
+    answer = 0
+    while(hp > 0):
+        if (hp // 5 >= 1):
+            hp -= 5
+            answer += 1
+        elif (hp // 3 >= 1):
+            hp -= 3
+            answer += 1
+        elif (hp > 0):
+            hp -= 1
+            answer += 1
+    return answer
+    
+# 54
+def solution(before, after):
+    answer = 0
+    before = sorted(list(str(before)))
+    after = sorted(list(str(after)))
+    
+    for i in range(0, len(before), 1):
+        if (before[i] != after[i]):
+            answer = 0
+            break
+        else:
+            answer = 1
+    return answer
