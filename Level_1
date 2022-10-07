@@ -255,3 +255,27 @@ def solution(s):
     for i in s:
         answer += i
     return answer
+
+# 25
+def solution(left, right):
+    answer = 0
+    for i in range(left, right+1, 1):
+        Save_List = []
+        for j in range(1, i+1, 1):
+            if (i % j == 0):
+                Save_List.append(j)
+        if (len(Save_List) % 2 == 0):
+            answer += i
+        elif (len(Save_List) % 2 == 1):
+            answer -= i
+    return answer
+    
+# 26
+def solution(arr1, arr2):
+    answer = []
+    for i in range(0, len(arr1), 1):
+        Save_List = []
+        for j in range(0, len(arr1[i]), 1):
+            Save_List.append(arr1[i][j] + arr2[i][j])
+        answer.append(Save_List)
+    return answer
