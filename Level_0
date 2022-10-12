@@ -722,3 +722,32 @@ def solution(letter):
         answer += morse[s]
     
     return answer
+
+# 70
+def solution(n):
+    answer = 0
+    Num = 1
+    Plus = 1
+    
+    while(True):
+        if (n >= Num):
+            Num *= Plus
+            Plus += 1
+            answer += 1
+        elif (n < Num):
+            answer -= 1
+            break
+    return answer
+    
+# 71
+def solution(numbers, k):
+    answer = 0
+    Num = 2 * (k-1)
+    while(True):
+        if (Num > len(numbers)):
+            Num -= len(numbers)
+        else:
+            break
+            
+    answer = numbers[Num]
+    return answer
