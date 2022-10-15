@@ -368,3 +368,13 @@ def solution(s):
         answer += ' '
     answer = answer[:-1]
     return answer
+
+# 33
+def solution(n):
+    The_rest = 0
+    Total = ''
+    while n > 0:
+        n, The_rest = divmod(n, 3)
+        Total += str(The_rest)
+    Total = Total[:len(Total)]
+    return int(Total, 3)
