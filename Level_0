@@ -785,7 +785,7 @@ def solution(spell, dic):
         answer = 2
     return answer
 
-#74
+# 74
 def solution(emergency):
     answer = []
     Sort_E = sorted(emergency)
@@ -793,4 +793,77 @@ def solution(emergency):
 
     for i in range(0, len(emergency), 1):
         answer.append(Sort_E.index(emergency[i]) + 1)
+    return answer
+
+# 75
+def solution(my_string):
+    my_string = my_string.split()
+    answer = int(my_string[0])
+
+    for i in range(1, len(my_string), 2):
+        if (my_string[i] == "+"):
+            answer += int(my_string[i+1])
+        else:
+            answer -= int(my_string[i+1])
+
+    return answer
+
+# 76
+def solution(n):
+    answer = []
+    Num = 2
+
+    while (Num <= n):
+        if n % Num == 0:
+            answer.append(Num)
+            n = n / Num
+        else:
+            Num += 1
+    answer = list(set(answer))
+    
+    return answer
+    
+# 77
+def solution(numbers):
+    answer = 0
+    a = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    b = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    Result_str = ''
+
+    for i in range(10):
+        num = numbers.count(a[i])
+        if (num >= 1):
+            Result_str += str(a.index(a[i]))
+    answer = int(Result_str)
+    return answer
+
+# 78
+def solution(keyinput, board):
+    answer = [0, 0]
+
+    for i in range(len(keyinput)):
+        if (keyinput[i] == "right"):
+            print(answer)
+            answer[0] += 1
+            if (abs(answer[0]) > abs(board[0] // 2)):
+                answer[0] -= 1
+
+        elif (keyinput[i] == "left"):
+            print(answer)
+            answer[0] -= 1
+            if (-(abs(answer[0])) < -(abs(board[0] // 2))):
+                answer[0] += 1
+
+        elif (keyinput[i] == "up"):
+            print(answer)
+            answer[1] += 1
+            if (abs(answer[1]) > abs(board[1] // 2)):
+                answer[1] -= 1
+
+        elif (keyinput[i] == "down"):
+            print(answer)
+            answer[1] -= 1
+            if (-(abs(answer[1])) < -(abs(board[1] // 2))):
+                answer[1] += 1
+
     return answer
