@@ -965,3 +965,15 @@ def solution(A, B):
             A.insert(0, A.pop(4))
 
     return(-1)
+
+# 84
+def solution(chicken):
+    answer = 0
+    coupon = 0
+
+    while(chicken >= 10):
+        coupon = chicken // 10
+        answer += coupon
+        chicken = (chicken % 10) + coupon
+
+    return answer
