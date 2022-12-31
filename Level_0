@@ -931,3 +931,37 @@ def solution(dots):
     answer = (max(dots_x) - min(dots_x)) * (max(dots_y) - min(dots_y))
 
     return answer
+
+# 83
+※ 방법(1)
+def solution(A, B):
+    answer = 0
+
+    if (A != B):
+        A = list(A)
+
+        for _ in range(len(A)):
+            A_word = ''
+            answer += 1
+            A.insert(0, A.pop())
+            for i in A:
+                A_word += i
+            
+            if(A_word == B):
+                return answer
+            
+        return(-1)
+    return answer
+    
+※ 방법(2)
+def solution(A, B):
+    A = list(A)
+    B = list(B)
+
+    for i in range(len(A)):    
+        if(A == B):
+            return i
+        else:
+            A.insert(0, A.pop(4))
+
+    return(-1)
